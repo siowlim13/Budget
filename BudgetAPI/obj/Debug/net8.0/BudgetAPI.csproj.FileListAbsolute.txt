@@ -169,3 +169,4 @@ C:\Users\limsi\source\repos\Projects\Budget\BudgetAPI\obj\Debug\net8.0\refint\Bu
 C:\Users\limsi\source\repos\Projects\Budget\BudgetAPI\obj\Debug\net8.0\BudgetAPI.pdb
 C:\Users\limsi\source\repos\Projects\Budget\BudgetAPI\obj\Debug\net8.0\BudgetAPI.genruntimeconfig.cache
 C:\Users\limsi\source\repos\Projects\Budget\BudgetAPI\obj\Debug\net8.0\ref\BudgetAPI.dll
+C:\Users\limsi\source\repos\Projects\Budget\BudgetAPI\obj\Debug\net8.0\BudgetAPI.sourcelink.json
