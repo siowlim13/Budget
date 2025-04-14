@@ -1,6 +1,7 @@
 using System;
 using System.Reflection.Metadata.Ecma335;
 using BudgetAPI.Data;
+using BudgetAPI.Data.Repositories;
 using BudgetAPI.Interfaces;
 using BudgetAPI.Services;
 using Microsoft.EntityFrameworkCore;
@@ -19,6 +20,7 @@ public static class ApplicationServiceExtentions
         });
         services.AddCors();
         services.AddScoped<ITokenService, TokenService>();
+        services.AddScoped<IUserRepository, UserRepository>();
 
         return services;
     }

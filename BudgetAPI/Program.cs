@@ -13,7 +13,7 @@ namespace BudgetAPI
 
             // Add services to the container.
             builder.Services.AddApplicationServices(builder.Configuration);
-            
+
             //builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
@@ -34,7 +34,9 @@ namespace BudgetAPI
             }
 
             //app.UseHttpsRedirection();
-            
+            app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod()
+                .WithOrigins("http://localhost:4200", "https://localhost:4200"));
+
             app.UseAuthorization();
             app.MapControllers();
 

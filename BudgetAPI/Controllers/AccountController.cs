@@ -35,6 +35,8 @@ public class AccountController(DataContext context, ITokenService tokenService) 
             Token = tokenService.CreateToken(user)
         });
     }
+
+
     private async Task<bool> UserExists(string username)
     {
         return await context.Account.AnyAsync(x => x.Username.ToLower() == username.ToLower());
