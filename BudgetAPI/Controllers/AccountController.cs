@@ -36,7 +36,29 @@ public class AccountController(DataContext context, ITokenService tokenService) 
         });
     }
 
+    [HttpPost("login")]
+    public async Task<ActionResult<AccountDto>> Login(LoginDto loginDto)
+    {
+        var user = await context.Account.FirstOrDefaultAsync(x =>
+            x.Username == loginDto.Username.ToLower());
 
+        if (user == null) return Unauthorized("Invalid username");
+
+        using var hmac = new HMACSHA512(user.PasswordSalt);
+        
+        var computedHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(loginDto.Password));
+
+        for (int i = 0; i < computedHash.Length; i++)
+        {
+            if (computedHash[i] != user.PasswordHash[i]) return Unauthorized("Invalid password");
+        }
+
+        return Ok(new AccountDto
+        {
+            Username = user.Username,
+            Token = tokenService.CreateToken(user)
+        });
+    }
     private async Task<bool> UserExists(string username)
     {
         return await context.Account.AnyAsync(x => x.Username.ToLower() == username.ToLower());
