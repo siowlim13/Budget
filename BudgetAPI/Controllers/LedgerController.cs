@@ -16,4 +16,11 @@ public class LedgerController(ILedgerRepository ledgerRepository) : BaseApiContr
 
         return Ok(payment);
     }
+    [HttpGet("{username}")]
+    public async Task<ActionResult<IEnumerable<Ledger>>> GetLedger(string username)
+    {
+        var ledger = await ledgerRepository.GetLedgerAsync(username);
+
+        return Ok(ledger);
+    }
 }

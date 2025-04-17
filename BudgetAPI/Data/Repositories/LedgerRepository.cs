@@ -35,8 +35,17 @@ public class LedgerRepository(DataContext context) : ILedgerRepository
         return payment;
     }
 
-    public Task<Ledger> GetPaymentsAsync()
+    public async Task<IEnumerable<Ledger>> GetLedgerAsync(string username)
     {
-        throw new NotImplementedException();
+        var account = await context.Account.FromSql($"SELECT * FROM Account WHERE Username = {username}").FirstOrDefaultAsync();
+
+        if (account == null)
+        {
+            throw new NotImplementedException("Account does not exist");
+        }
+
+        var id = account.Id;
+
+        return await context.Ledger.FromSql($"SELECT * FROM Ledger WHERE AccountId = {id}").ToListAsync();
     }
 }

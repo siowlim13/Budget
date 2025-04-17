@@ -7,5 +7,5 @@ namespace BudgetAPI.Interfaces;
 public interface ILedgerRepository
 {
     Task<Ledger> AddPaymentAsync(LedgerDto ledgerDto);
-    Task<Ledger> GetPaymentsAsync();
+    Task<IEnumerable<Ledger>> GetLedgerAsync(string username);
 }
