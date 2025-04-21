@@ -3,13 +3,14 @@ using BudgetAPI.Data;
 using BudgetAPI.DTOs;
 using BudgetAPI.Entities;
 using BudgetAPI.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BudgetAPI.Controllers;
-
+//[Authorize]
 public class LedgerController(ILedgerRepository ledgerRepository) : BaseApiController
 {
-    [HttpPost]
+    [HttpPost("/AddPayment")]
     public async Task<ActionResult<Ledger>> AddPayments(LedgerDto ledgerDto)
     {
         var payment = await ledgerRepository.AddPaymentAsync(ledgerDto);

@@ -13,7 +13,6 @@ import { FormsModule } from '@angular/forms';
 export class RegisterComponent {
   private accountServices = inject(AccountService);
   private toastr = inject(ToastrService);
-  usersFromHomeComponent = input.required<any>();
   cancelRegister = output<boolean>();
   model: any = {}
 
