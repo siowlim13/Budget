@@ -13,11 +13,11 @@ export class LedgerService {
   baseUrl = environment.apiUrl;
 
   getLedger(username: string){
-    return this.http.get<ledger[]>(this.baseUrl + 'Ledger/' + username);
+    return this.http.get<ledger[]>(this.baseUrl + 'Ledger/' + username, this.getHttpOptions());
   }
 
   updateLedger(transaction: ledger){
-    return this.http.post<ledger>(this.baseUrl + 'AddPayment', this.getHttpOptions())
+    return this.http.put<ledger>(this.baseUrl + 'AddPayment', this.getHttpOptions())
   }
 
   getHttpOptions() {

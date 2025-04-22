@@ -170,3 +170,4 @@ C:\Users\limsi\source\repos\Projects\Budget\BudgetAPI\obj\Debug\net8.0\BudgetAPI
 C:\Users\limsi\source\repos\Projects\Budget\BudgetAPI\obj\Debug\net8.0\BudgetAPI.genruntimeconfig.cache
 C:\Users\limsi\source\repos\Projects\Budget\BudgetAPI\obj\Debug\net8.0\ref\BudgetAPI.dll
 C:\Users\limsi\source\repos\Projects\Budget\BudgetAPI\obj\Debug\net8.0\BudgetAPI.sourcelink.json
+C:\Users\limsi\source\repos\Projects\Budget\BudgetAPI\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BudgetAPI.Controllers;
-//[Authorize]
+[Authorize]
 public class LedgerController(ILedgerRepository ledgerRepository) : BaseApiController
 {
     [HttpPost("/AddPayment")]

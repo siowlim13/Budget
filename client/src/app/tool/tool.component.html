@@ -33,6 +33,13 @@
                     <div class="row">
                         <div class="col-md-3">
                             <input 
+                                name="DatePurchased"
+                                class="form-control"
+                                [(ngModel)]="payments.dateAdded">
+                            <label>Date Purchased</label>
+                        </div>
+                        <div class="col-md-3">
+                            <input 
                                 name="Details"
                                 class="form-control"
                                 [(ngModel)]="payments.details">
@@ -52,8 +59,8 @@
                                 [(ngModel)]="payments.payments">
                             <label>Amount</label>
                         </div>
-                        <div class="col-md-3">
-                            <button class="btn btn-success me-2" type="submit">Add</button>
+                        <div>
+                            <button [disabled]="!paymentForm.dirty" class="btn btn-success me-2" type="submit">Add</button>
                         </div>
                     </div>
                 </form>
